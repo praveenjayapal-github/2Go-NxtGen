@@ -1,0 +1,125 @@
+:root {
+  --primary-color: #1E88E5;
+  --accent-color: #43A047;
+  --error-color: #E53935;
+  --background-color: #F5F5F5;
+  --card-color: #FFFFFF;
+  --text-color: #333;
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --card-color: #1E1E1E;
+  --text-color: #EEE;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+header.navbar .logo {
+  height: 32px;
+}
+
+header.navbar nav button {
+  background: none;
+  border: none;
+  color: #fff;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+main {
+  padding: 16px;
+}
+
+h1, h2 {
+  color: var(--primary-color);
+}
+
+.search-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search-box input {
+  flex: 1 1 120px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.search-box button {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: var(--card-color);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card.delayed {
+  border-left: 4px solid var(--error-color);
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: #ccc;
+}
+
+.settings-option {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  header.navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
