@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2Go - Real-Time Bus Info</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="navbar">
+    <img src="assets/logo.png" alt="2Go Logo" class="logo" />
+    <nav>
+      <button id="homeBtn">Home</button>
+      <button id="mapBtn">Map</button>
+      <button id="settingsBtn">⚙️</button>
+      <button id="themeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="homeView" class="view active">
+      <h1>Live Departures</h1>
+      <div class="search-box">
+        <input id="fromInput" placeholder="From Stop" />
+        <input id="toInput" placeholder="To Stop" />
+        <button id="planBtn">Plan Trip</button>
+      </div>
+      <div id="departuresList" class="cards"></div>
+      <h2>Nearby Stops</h2>
+      <div id="nearbyStops" class="cards"></div>
+    </section>
+
+    <section id="mapView" class="view">
+      <h1>Map View</h1>
+      <div id="map"></div>
+    </section>
+
+    <section id="settingsView" class="view">
+      <h1>Settings</h1>
+      <div class="settings-option">
+        <label>
+          Dark Mode
+          <input type="checkbox" id="darkModeSwitch" />
+        </label>
+      </div>
+    </section>
+  </main>
+
+  <script src="scripts/map.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
